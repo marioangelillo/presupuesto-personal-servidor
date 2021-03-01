@@ -14,4 +14,7 @@ router.delete('/delete/:id',
   operationController.delete
 )
 
+router.put('/update/',
+operationController.update);
+
 module.exports = router ;

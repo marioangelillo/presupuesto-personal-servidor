@@ -3,7 +3,7 @@ const mysql = require('mysql');
 db = mysql.createPool({
     host     : 'localhost',
     user     : 'root',
-    password : 'root',
+    password : 'xica1313',
     database : 'alkemy'
   });
   
@@ -60,20 +60,20 @@ exports.delete = async (req, res) =>{
     }
 }
 
-/*exports.updateProduct = async (req, res) =>{
+exports.update = async (req, res) =>{
 
     const {id, concept, amount, dateOperation, operation} = req.body
 
-    const sqlUpdateProduct = "UPDATE alkemy.movimientos SET dateOperation = ?, amount = ?, concept = ? WHERE id = " + req.params.id
+    const sqlUpdateProduct = "UPDATE alkemy.movimientos SET dateOperation = ?, amount = ?, concept = ? WHERE id = " + id
     
     console.log(req.body);
     try {
         db.query(sqlUpdateProduct, [dateOperation, amount, concept], (err, result) => {
             console.log(err)
-            res.json(result);
+            res.json({msg: 'Producto modificado correctamente'});
         })
     } catch (error) {
         console.error(error);
         return res.status(400).json({msg: 'Hubo un error'});
     }
-}*/
+}
